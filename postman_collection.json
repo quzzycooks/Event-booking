@@ -1,0 +1,1563 @@
+{
+  "info": {
+    "_postman_id": "7e47a56d-67d5-4378-8892-630e4beed2fd",
+    "name": "Event Booking & Ticketing API",
+    "description": "Complete API collection for Event Booking system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "10657913"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"first_name\": \"Doe\",\n    \"last_name\": \"Attendee\",\n    \"email\": \"doe.attendee@example.com\",\n    \"role\": \"attendee\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Organizer",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Organizer\",\n    \"email\": \"john.organizer@example.com\",\n    \"role\": \"organizer\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/register",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 01:19:47 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Registration completed successfully\",\n    \"data\": {\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3NzA2ODYzODcsImV4cCI6MTc3MDk0NTU4NywibmJmIjoxNzcwNjg2Mzg3LCJqdGkiOiI0aGJDRUd2MjFFdjVlMjIxIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.mb5c95CiTIUS81l8Tk7gnfNGTBK_UiKUcwwFPuLnvis\",\n        \"token_type\": \"bearer\",\n        \"expires_in\": 259200\n    }\n}"
+            },
+            {
+              "name": "Attendee",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"first_name\": \"Doe\",\n    \"last_name\": \"Attendee\",\n    \"email\": \"doe.attendee@example.com\",\n    \"role\": \"attendee\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/register",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 01:20:40 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Registration completed successfully\",\n    \"data\": {\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3NzA2ODY0NDAsImV4cCI6MTc3MDk0NTY0MCwibmJmIjoxNzcwNjg2NDQwLCJqdGkiOiJuREJ0ZDBzU0RWVkJMaGUyIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Yo30J1acyCSPpKocksewO_5haxjQw-3UZM1mN_uniVo\",\n        \"token_type\": \"bearer\",\n        \"expires_in\": 259200\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.data && jsonData.data.access_token) {",
+                  "    pm.collectionVariables.set(\"token\", jsonData.data.access_token);",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"doe.attendee@example.com\",\n    \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "attendee",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"doe.attendee@example.com\",\n    \"password\": \"password123\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/login",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Feb 2026 18:42:36 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzEwMDgxNTYsImV4cCI6MTc3MTAxMTc1NiwibmJmIjoxNzcxMDA4MTU2LCJqdGkiOiJjTFRmNjdQOHRON3EyaUlpIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Gc4Od9tF4iKARwGbwfpFarVV5szswgLLQu-qO6klnd8\",\n        \"token_type\": \"bearer\",\n        \"expires_in\": 259200\n    }\n}"
+            },
+            {
+              "name": "organizer",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"john.organizer@example.com\",\n    \"password\": \"password123\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/login",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Feb 2026 19:03:43 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzEwMDk0MjMsImV4cCI6MTc3MTAxMzAyMywibmJmIjoxNzcxMDA5NDIzLCJqdGkiOiJZWUppT0NRdUVPSnE2ZWhtIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.6VVjaaz-KbOkvlW0bGDoa8zrnjRQ-fTf8bOIaSiDpnw\",\n        \"token_type\": \"bearer\",\n        \"expires_in\": 259200\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/refresh",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "User",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/user",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 01:23:18 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"User details retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"John\",\n        \"last_name\": \"Organizer\",\n        \"email\": \"john.organizer@example.com\",\n        \"role\": \"organizer\",\n        \"created_at\": \"2026-02-10T01:19:47.000000Z\",\n        \"updated_at\": \"2026-02-10T01:19:47.000000Z\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "List All Events (Public)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/events?date&location=Lagos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "date",
+                  "value": null,
+                  "type": "text"
+                },
+                {
+                  "key": "location",
+                  "value": "Lagos",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List All Events (Public)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/events",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "events"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 01:32:36 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Events retrieved successfully\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 4,\n                \"title\": \"Laravel Conference 2026\",\n                \"description\": \"Join us for the biggest Laravel conference of the year!\",\n                \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n                \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n                \"price\": 0,\n                \"total_seats\": 500,\n                \"remaining_seats\": 500,\n                \"status\": \"draft\",\n                \"is_full\": false,\n                \"is_past\": false,\n                \"can_be_booked\": false,\n                \"organizer\": {\n                    \"id\": 1,\n                    \"first_name\": \"John\",\n                    \"last_name\": \"Organizer\",\n                    \"email\": \"john.organizer@example.com\",\n                    \"role\": \"organizer\",\n                    \"created_at\": \"2026-02-10T01:19:47.000000Z\",\n                    \"updated_at\": \"2026-02-10T01:19:47.000000Z\"\n                },\n                \"created_at\": \"2026-02-10T01:31:16.000000Z\",\n                \"updated_at\": \"2026-02-10T01:31:16.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Laravel Conference 2026\",\n                \"description\": \"Join us for the biggest Laravel conference of the year!\",\n                \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n                \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n                \"price\": 50000,\n                \"total_seats\": 500,\n                \"remaining_seats\": 500,\n                \"status\": \"draft\",\n                \"is_full\": false,\n                \"is_past\": false,\n                \"can_be_booked\": false,\n                \"organizer\": {\n                    \"id\": 1,\n                    \"first_name\": \"John\",\n                    \"last_name\": \"Organizer\",\n                    \"email\": \"john.organizer@example.com\",\n                    \"role\": \"organizer\",\n                    \"created_at\": \"2026-02-10T01:19:47.000000Z\",\n                    \"updated_at\": \"2026-02-10T01:19:47.000000Z\"\n                },\n                \"created_at\": \"2026-02-10T01:30:31.000000Z\",\n                \"updated_at\": \"2026-02-10T01:30:31.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Laravel Conference 2026\",\n                \"description\": \"Join us for the biggest Laravel conference of the year!\",\n                \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n                \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n                \"price\": 50000,\n                \"total_seats\": 500,\n                \"remaining_seats\": 500,\n                \"status\": \"draft\",\n                \"is_full\": false,\n                \"is_past\": false,\n                \"can_be_booked\": false,\n                \"organizer\": {\n                    \"id\": 1,\n                    \"first_name\": \"John\",\n                    \"last_name\": \"Organizer\",\n                    \"email\": \"john.organizer@example.com\",\n                    \"role\": \"organizer\",\n                    \"created_at\": \"2026-02-10T01:19:47.000000Z\",\n                    \"updated_at\": \"2026-02-10T01:19:47.000000Z\"\n                },\n                \"created_at\": \"2026-02-10T01:28:57.000000Z\",\n                \"updated_at\": \"2026-02-10T01:28:57.000000Z\"\n            },\n            {\n                \"id\": 1,\n                \"title\": \"Laravel Conference 2026\",\n                \"description\": \"Join us for the biggest Laravel conference of the year!\",\n                \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n                \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n                \"price\": 50000,\n                \"total_seats\": 500,\n                \"remaining_seats\": 500,\n                \"status\": \"draft\",\n                \"is_full\": false,\n                \"is_past\": false,\n                \"can_be_booked\": false,\n                \"organizer\": {\n                    \"id\": 1,\n                    \"first_name\": \"John\",\n                    \"last_name\": \"Organizer\",\n                    \"email\": \"john.organizer@example.com\",\n                    \"role\": \"organizer\",\n                    \"created_at\": \"2026-02-10T01:19:47.000000Z\",\n                    \"updated_at\": \"2026-02-10T01:19:47.000000Z\"\n                },\n                \"created_at\": \"2026-02-10T01:25:44.000000Z\",\n                \"updated_at\": \"2026-02-10T01:25:44.000000Z\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://localhost:8000/api/events?page=1\",\n            \"last\": \"http://localhost:8000/api/events?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://localhost:8000/api/events?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://localhost:8000/api/events\",\n            \"per_page\": 15,\n            \"to\": 4,\n            \"total\": 4\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Event Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/events/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "as organizer",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/events/:id",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "events",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 08:31:32 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Event details\",\n    \"data\": {\n        \"id\": 3,\n        \"title\": \"Laravel Conference 2026\",\n        \"description\": \"Join us for the biggest Laravel conference of the year!\",\n        \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n        \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n        \"ticket_price\": 0,\n        \"total_seats\": 500,\n        \"remaining_seats\": 500,\n        \"status\": \"draft\",\n        \"organizer\": {\n            \"id\": 1,\n            \"first_name\": \"John\",\n            \"last_name\": \"Organizer\",\n            \"email\": \"john.organizer@example.com\",\n            \"role\": \"organizer\"\n        },\n        \"bookings_count\": 1,\n        \"created_at\": \"2026-02-10T01:30:31.000000Z\",\n        \"updated_at\": \"2026-02-10T01:30:31.000000Z\"\n    }\n}"
+            },
+            {
+              "name": "as attendee",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/events/:id",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "events",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 08:37:52 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Event details\",\n    \"data\": {\n        \"id\": 3,\n        \"title\": \"Laravel Conference 2026 - Updated\",\n        \"description\": \"Join us for the biggest Laravel conference of the year!\",\n        \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n        \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n        \"ticket_price\": 0,\n        \"total_seats\": 500,\n        \"remaining_seats\": 500,\n        \"status\": \"published\",\n        \"organizer\": {\n            \"id\": 1,\n            \"first_name\": \"John\",\n            \"last_name\": \"Organizer\",\n            \"email\": \"john.organizer@example.com\",\n            \"role\": \"organizer\"\n        },\n        \"bookings_count\": null,\n        \"created_at\": \"2026-02-10T01:30:31.000000Z\",\n        \"updated_at\": \"2026-02-10T08:35:48.000000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Event Bookings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events/:id/bookings",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                ":id",
+                "bookings"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Event Bookings",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/events/:id/bookings",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "events",
+                    ":id",
+                    "bookings"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Feb 2026 19:04:55 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"event bookings\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"event_id\": 3,\n                \"user_id\": 2,\n                \"quantity\": 2,\n                \"status\": \"cancelled\",\n                \"created_at\": \"2026-02-10T08:44:16.000000Z\",\n                \"updated_at\": \"2026-02-10T08:51:48.000000Z\",\n                \"user\": {\n                    \"id\": 2,\n                    \"first_name\": \"Doe\",\n                    \"last_name\": \"Attendee\",\n                    \"email\": \"doe.attendee@example.com\",\n                    \"role\": \"attendee\",\n                    \"created_at\": \"2026-02-10T01:20:40.000000Z\",\n                    \"updated_at\": \"2026-02-10T01:20:40.000000Z\"\n                }\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/events/3/bookings?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/events/3/bookings?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/events/3/bookings?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/events/3/bookings\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Event (Organizer)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Laravel Conference 2026\",\n    \"description\": \"Join us for the biggest Laravel conference of the year!\",\n    \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n    \"event_date\": \"2026-03-15 10:00:00\",\n    \"price\": 50000,\n    \"total_seats\": 500\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/events",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"title\": \"Laravel Conference 2026\",\n    \"description\": \"Join us for the biggest Laravel conference of the year!\",\n    \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n    \"event_date\": \"2026-03-15 10:00:00\",\n    \"price\": 50000,\n    \"total_seats\": 500\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/events",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "events"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 01:30:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Event created successfully\",\n    \"data\": {\n        \"title\": \"Laravel Conference 2026\",\n        \"description\": \"Join us for the biggest Laravel conference of the year!\",\n        \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n        \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n        \"price\": 50000,\n        \"total_seats\": 500,\n        \"remaining_seats\": 500,\n        \"status\": \"draft\",\n        \"organizer_id\": 1,\n        \"updated_at\": \"2026-02-10T01:30:31.000000Z\",\n        \"created_at\": \"2026-02-10T01:30:31.000000Z\",\n        \"id\": 3,\n        \"organizer\": {\n            \"id\": 1,\n            \"first_name\": \"John\",\n            \"last_name\": \"Organizer\",\n            \"email\": \"john.organizer@example.com\",\n            \"role\": \"organizer\",\n            \"created_at\": \"2026-02-10T01:19:47.000000Z\",\n            \"updated_at\": \"2026-02-10T01:19:47.000000Z\"\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Event (Organizer)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Laravel Conference 2026 - Updated\",\n  \"status\": \"published\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/events/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Event (Organizer)",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Laravel Conference 2026 - Updated\",\n  \"status\": \"published\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/events/:id",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "events",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 08:35:48 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Event updated successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"title\": \"Laravel Conference 2026 - Updated\",\n        \"description\": \"Join us for the biggest Laravel conference of the year!\",\n        \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n        \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n        \"ticket_price\": 0,\n        \"total_seats\": 500,\n        \"remaining_seats\": 500,\n        \"status\": \"published\",\n        \"created_at\": \"2026-02-10T01:30:31.000000Z\",\n        \"updated_at\": \"2026-02-10T08:35:48.000000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Event (Organizer)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/events/:id",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "events",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 01:36:35 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Event deleted successfully\",\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "List My Bookings (Attendee)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bookings",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bookings"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List My Bookings (Attendee)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/bookings",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bookings"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Feb 2026 19:01:40 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Bookings retrieved successfully\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"quantity\": 2,\n                \"status\": \"cancelled\",\n                \"event\": {\n                    \"id\": 3,\n                    \"title\": \"Laravel Conference 2026 - Updated\",\n                    \"description\": \"Join us for the biggest Laravel conference of the year!\",\n                    \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n                    \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n                    \"ticket_price\": 0,\n                    \"total_seats\": 500,\n                    \"remaining_seats\": 500,\n                    \"status\": \"published\",\n                    \"organizer\": {\n                        \"id\": 1,\n                        \"first_name\": \"John\",\n                        \"last_name\": \"Organizer\",\n                        \"email\": \"john.organizer@example.com\",\n                        \"role\": \"organizer\"\n                    },\n                    \"created_at\": \"2026-02-10T01:30:31.000000Z\",\n                    \"updated_at\": \"2026-02-10T08:51:48.000000Z\"\n                },\n                \"created_at\": \"2026-02-10 08:44:16\",\n                \"updated_at\": \"2026-02-10 08:51:48\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://localhost:8000/api/bookings?page=1\",\n            \"last\": \"http://localhost:8000/api/bookings?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://localhost:8000/api/bookings?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://localhost:8000/api/bookings\",\n            \"per_page\": 15,\n            \"to\": 1,\n            \"total\": 1\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Booking (Attendee)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"event_id\": 3,\n    \"quantity\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/bookings",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bookings"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Booking (Attendee)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event_id\": 3,\n  \"quantity\": 2\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/bookings",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bookings"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 08:44:16 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Booking created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"quantity\": 2,\n        \"status\": \"confirmed\",\n        \"event\": {\n            \"id\": 3,\n            \"title\": \"Laravel Conference 2026 - Updated\",\n            \"description\": \"Join us for the biggest Laravel conference of the year!\",\n            \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n            \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n            \"ticket_price\": 0,\n            \"total_seats\": 500,\n            \"remaining_seats\": 498,\n            \"status\": \"published\",\n            \"organizer\": {\n                \"id\": 1,\n                \"first_name\": \"John\",\n                \"last_name\": \"Organizer\",\n                \"email\": \"john.organizer@example.com\",\n                \"role\": \"organizer\"\n            },\n            \"created_at\": \"2026-02-10T01:30:31.000000Z\",\n            \"updated_at\": \"2026-02-10T08:44:16.000000Z\"\n        },\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"Doe\",\n            \"last_name\": \"Attendee\",\n            \"email\": \"doe.attendee@example.com\",\n            \"role\": \"attendee\"\n        },\n        \"created_at\": \"2026-02-10 08:44:16\",\n        \"updated_at\": \"2026-02-10 08:44:16\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Booking Details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bookings/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bookings",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Booking Details",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/bookings/:id",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bookings",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 08:45:19 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Booking details retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"quantity\": 2,\n        \"status\": \"confirmed\",\n        \"event\": {\n            \"id\": 3,\n            \"title\": \"Laravel Conference 2026 - Updated\",\n            \"description\": \"Join us for the biggest Laravel conference of the year!\",\n            \"location\": \"Tech Hub Convention Center, Lagos, Nigeria\",\n            \"event_date\": \"2026-03-15T10:00:00.000000Z\",\n            \"ticket_price\": 0,\n            \"total_seats\": 500,\n            \"remaining_seats\": 498,\n            \"status\": \"published\",\n            \"organizer\": {\n                \"id\": 1,\n                \"first_name\": \"John\",\n                \"last_name\": \"Organizer\",\n                \"email\": \"john.organizer@example.com\",\n                \"role\": \"organizer\"\n            },\n            \"created_at\": \"2026-02-10T01:30:31.000000Z\",\n            \"updated_at\": \"2026-02-10T08:44:16.000000Z\"\n        },\n        \"created_at\": \"2026-02-10 08:44:16\",\n        \"updated_at\": \"2026-02-10 08:44:16\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cancel Booking",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bookings/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bookings",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cancel Booking",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/bookings/:id",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bookings",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 08:51:48 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Booking cancelled successfully\",\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "pm.request.addHeader('Accept: application/json');"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
